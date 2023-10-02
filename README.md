@@ -3,6 +3,8 @@
 #### Introduction
 
 Welcome to the Insurance Calculator project! This repository contains the source code for an insurance calculator application. This README provides instructions on how to set up and run the project both locally and in a Docker container.
+
+#### Live: https://insurance-calculator-5enp.onrender.com
 ![image](https://github.com/Lubomir27/insurance-calculator/assets/102256957/8d385f82-c0c4-41c3-8c8b-43bd8115ce62)
 
 #### Local Installation

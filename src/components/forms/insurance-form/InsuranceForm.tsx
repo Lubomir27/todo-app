@@ -7,15 +7,14 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser'
 import { Button, Checkbox, FormControlLabel, Grid, Slider, Typography } from '@mui/material'
 
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
-import { addDays } from 'date-fns'
 import { ErrorMessage, Form, Formik } from 'formik'
 import { useState } from 'react'
 
 import LayerContainer from './LayerContainer'
 import RenderResult from './RenderResult'
 import ToggleButtonComponent from './ToggleButtonComponent'
-import './insuranceForm.scss'
 import { calculatePrice } from './functions'
+import './insuranceForm.scss'
 import { insuranceFormValidation } from './validations'
 
 const InsuranceForm = () => {
@@ -26,7 +25,7 @@ const InsuranceForm = () => {
         insuranceType: null,
         packageType: null,
         startDate: today,
-        endDate: addDays(today, 1),
+        endDate: today,
         hasTripCancellation: false,
         hasSportActivities: false,
         numberOfPersons: 1,
@@ -85,6 +84,7 @@ const InsuranceForm = () => {
                 initialValues={initialValues}
                 validationSchema={insuranceFormValidation}
                 onSubmit={(values) => {
+                    console.log(values)
                     setResultPrice(calculatePrice(values))
                 }}>
                 {({ setFieldValue, handleSubmit, handleChange, values, resetForm }) => (
@@ -94,7 +94,10 @@ const InsuranceForm = () => {
                             value={values.insuranceType}
                             className="gap-4"
                             options={options.filter((option) => ['SHORT_TERM', 'LONG_TERM'].includes(option.value))}
-                            onChange={(newValue) => setFieldValue('insuranceType', newValue)}
+                            onChange={(newValue) => {
+                                setFieldValue('insuranceType', newValue)
+                                setResultPrice(null)
+                            }}
                         />
                         <ErrorMessage
                             name="insuranceType"
@@ -152,7 +155,7 @@ const InsuranceForm = () => {
                                     <DatePicker
                                         className="w-full"
                                         label="Koniec poistenia"
-                                        minDate={addDays(values.startDate, 1)}
+                                        minDate={values.startDate}
                                         value={values.endDate}
                                         onChange={(newDate) => setFieldValue('endDate', newDate)}
                                     />

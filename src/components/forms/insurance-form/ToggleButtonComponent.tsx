@@ -11,16 +11,17 @@ type ToggleButtonComponentProps = {
     value: string | null
     options: Option[]
     onChange: (value: string | null) => void
+    className?: string | undefined
 }
 
-const ToggleButtonComponent: FC<ToggleButtonComponentProps> = ({ value, options, onChange }) => (
+const ToggleButtonComponent: FC<ToggleButtonComponentProps> = ({ value, options, onChange, className }) => (
     <>
         <ToggleButtonGroup
             value={value}
             exclusive
             onChange={(_, newValue) => onChange(newValue)}
             fullWidth
-            className="gap-4">
+            className={className}>
             {options.map((option) => (
                 <ToggleButton
                     key={option.value}

@@ -92,6 +92,7 @@ const InsuranceForm = () => {
                         <p className="text-left font-bold mb-4">Typ postenia*</p>
                         <ToggleButtonComponent
                             value={values.insuranceType}
+                            className="gap-4"
                             options={options.filter((option) => ['SHORT_TERM', 'LONG_TERM'].includes(option.value))}
                             onChange={(newValue) => setFieldValue('insuranceType', newValue)}
                         />
@@ -104,6 +105,7 @@ const InsuranceForm = () => {
                         <p className="text-left font-bold my-4">Výber balíka*</p>
                         <ToggleButtonComponent
                             value={values.packageType}
+                            className="gap-4 flex-wrap sm:flex-nowrap"
                             options={options.filter((option) => ['BASIC', 'MEDIUM', 'EXTRA'].includes(option.value))}
                             onChange={(newValue) => setFieldValue('packageType', newValue)}
                         />

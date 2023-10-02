@@ -1,0 +1,43 @@
+// Define a styles class  for the insurance toggle buttons
+.insurance-toggle {
+    &.MuiToggleButtonGroup-grouped.Mui-selected {
+        background-color: white !important;
+        border: 2px solid #1976d2 !important;
+    }
+
+    &.MuiToggleButtonGroup-grouped:not(:first-of-type) {
+        border: 1px solid #1976d2 !important;
+        border-radius: 4px !important;
+    }
+
+    &.MuiToggleButtonGroup-grouped {
+        border: 1px solid #1976d2 !important;
+        border-radius: 4px !important;
+    }
+
+    // Adjust the border radius for specific cases
+    .MuiToggleButtonGroup-grouped:not(:last-of-type) {
+        border-top-right-radius: 4px !important;
+        border-bottom-right-radius: 4px !important;
+    }
+
+    // Handle selected state with insurance-toggle class
+    &:not(:first-of-type).Mui-selected {
+        background-color: white !important;
+        border: 2px solid #1976d2 !important;
+    }
+}
+
+// Error message style
+.formik-error {
+    color: red;
+    font-size: 1rem;
+    text-align: left;
+    margin-top: 0.3rem;
+}
+
+// Remove the focus outline from buttons
+button:focus,
+button:focus-visible {
+    outline: 0px !important;
+}

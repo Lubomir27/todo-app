@@ -11,10 +11,9 @@ export const insuranceFormValidation = yup
             .min(startOfDay(new Date()), 'Dátum nemôže byť v minulosti')
             .typeError('Neplatný formát'),
         endDate: yup.date().when('insuranceType', {
-            is: 'shortTerm',
+            is: 'SHORT_TERM',
             then: (schema) =>
                 schema.required('*Toto pole je povinné').min(yup.ref('startDate'), 'Dátum musí byť vyšší').typeError('Neplatný formát'),
-
             otherwise: (schema) => schema.notRequired().nullable(),
         }),
     })

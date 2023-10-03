@@ -150,7 +150,7 @@ const InsuranceForm = () => {
                             {values.insuranceType === 'SHORT_TERM' && (
                                 <Grid
                                     item
-                                    xs={10}
+                                    xs={12}
                                     sm={6}>
                                     <DatePicker
                                         className="w-full"

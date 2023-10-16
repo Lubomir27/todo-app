@@ -2,7 +2,7 @@ version: '1'
 
 services:
     calculator:
-        container_name: calculator_c
+        container_name: todo_app_c
         build: .
         ports:
             - '3000:3000'

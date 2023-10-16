@@ -1,9 +1,8 @@
-import { differenceInDays } from "date-fns";
+import { format, parseISO } from 'date-fns'
+import { sk } from 'date-fns/locale'
 
-export const countDaysFromStartToEndDates = (
-  startDate: Date,
-  endDate: Date
-): number => {
-  //must add 1 day, differenceInDays is returning 0 for startDate = 17.10 and endDate = 18.10
-  return Number(differenceInDays(endDate, startDate)) + 1;
-};
+export function formatDateToLocale(dateTime: string | Date) {
+    return typeof dateTime !== 'object'
+        ? format(parseISO(dateTime as string), 'H:mm dd.MM.yyyy', { locale: sk })
+        : format(dateTime, 'H:mm dd.MM.yyyy', { locale: sk })
+}

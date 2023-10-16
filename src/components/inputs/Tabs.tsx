@@ -10,7 +10,7 @@ const SelectTabs = ({ onFilterChange, selectedFilter }: SelectTabsProps) => {
     return (
         <Tabs
             value={selectedFilter}
-            onChange={(e, newValue: TodoFilterValues) => onFilterChange(newValue)}
+            onChange={(_, newValue: TodoFilterValues) => onFilterChange(newValue)}
             centered>
             <Tab
                 label="Všetky"

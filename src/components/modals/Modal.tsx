@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react'
+import { DialogTitle } from '@mui/material'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
-import { DialogTitle } from '@mui/material'
+import { ReactNode } from 'react'
 
 interface ModalProps {
     title?: string

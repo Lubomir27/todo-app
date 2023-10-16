@@ -1,6 +1,6 @@
 import { AppBar, Container, Toolbar, Typography } from '@mui/material'
+import { ReactElement } from 'react'
 import { Link as Navigate } from 'react-router-dom'
-import React, { ReactElement } from 'react'
 import Footer from './Footer'
 
 const PageWrapper = ({ children }: { children?: ReactElement | ReactElement[] }) => {

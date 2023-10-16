@@ -1,17 +1,17 @@
-import React, { FC, useState } from 'react'
+import { FC, useState } from 'react'
 
 import DeleteIcon from '@mui/icons-material/Delete'
-import { Paper, Box, Typography, Button, IconButton, Grid } from '@mui/material'
+import { Box, Button, Grid, IconButton, Paper, Typography } from '@mui/material'
 import { Link as Navigate } from 'react-router-dom'
 
-import { ConfirmationModal } from '../modals/ConfirmationModal'
 import EditIcon from '@mui/icons-material/Edit'
-import { ListTodo } from '../../common/types'
-import { useDeleteListTodosMutation } from '../../api/listTodosApi'
 import { useQueryClient } from 'react-query'
 import { toast } from 'react-toastify'
+import { useDeleteListTodosMutation } from '../../api/listTodosApi'
+import { ListTodo } from '../../common/types'
 import TodoListForm from '../../components/forms/TodoListForm'
 import ListTodosFormModal from '../../components/modals/Modal'
+import { ConfirmationModal } from '../modals/ConfirmationModal'
 
 interface ListTodosCardProps {
     todosList: ListTodo

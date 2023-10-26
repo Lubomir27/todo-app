@@ -43,7 +43,7 @@ git clone https://github.com/Lubomir27/todo-app.git
 
 #### Navigate to the project directory:
 
-cd insurance-calculator
+cd todo-app
 
 #### Build and run the project using Docker Compose
 
